@@ -24,7 +24,21 @@ int main(int argc, char *argv[])
 		return 1;
 
 	//Creating a Window using SDL
-	SDL_Window* window = SDL_CreateWindow("Reece Goodwin 15576606", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
+	SDL_Window* window = SDL_CreateWindow("Reece Goodwin 15576606", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_RESIZABLE);
+
+	SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 1);
+
+
+
+	SDL_SetRenderDrawColor(renderer, 255,255,0,0);
+	SDL_Delay(500);
+
+	SDL_RenderClear(renderer);
+
+
+	SDL_Delay(1000);
+
+	SDL_UpdateWindowSurface(window);
 
 	//Delays the program from closing or continuing through the code below it.
 	SDL_Delay(4000);
